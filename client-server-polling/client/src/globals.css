@@ -1,0 +1,58 @@
+@import 'tailwindcss';
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background: #222;
+  color: #eee;
+  overflow: hidden;
+}
+
+h1 {
+  color: #fff;
+}
+
+a, button {
+  cursor: pointer;
+}
+
+label {
+  color: #fff;
+  font-size: 0.75rem;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+  background: none;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+/* override autofill styles */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #222 inset !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='password']:focus {
+  background: #333;
+  outline: none;
+}
