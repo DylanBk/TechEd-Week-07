@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "typeRoots": ["./src/config/types/index.d.ts"]
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

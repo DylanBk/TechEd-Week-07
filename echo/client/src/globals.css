@@ -1,0 +1,209 @@
+@import './themes.css';
+
+@layer base {
+  *{
+    /* &::-webkit-scrollbar {
+      width: 8px;
+      border-radius: 1rem;
+      @apply bg-background;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 1rem;
+      @apply bg-surface;
+    
+      &:hover {
+        @apply bg-surface-muted;
+      }
+    } */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  html, body {
+    height: 100%;
+    width: 100%;
+    @apply bg-background;
+    @apply text-smoke;
+    font-family: 'Geist';
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-snow;
+    font-family: 'Raleway';
+  }
+
+  div:has(label + input),
+  div:has(label + textarea) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    @apply text-snow;
+    font-size: 0.75rem;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='password'] {
+    padding: 0.5rem;
+    @apply border border-border;
+    border-radius: 6px;
+    outline: none;
+  
+    &:focus {
+      @apply bg-border;
+    }
+
+    &:-webkit-autofill {
+      -webkit-text-fill-color: var(--color-smoke) !important;
+      -webkit-box-shadow: 0 0 0 30px var(--color-surface) inset !important;
+      border: 1px solid var(--color-border) !important;
+    }
+  }
+
+  textarea {
+    padding: 0.5rem;
+    @apply border border-border;
+    border-radius: 6px;
+    outline: none;
+    resize: vertical;
+
+    &:focus {
+      @apply bg-border;
+    }
+  }
+
+
+  a, button {
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  button {
+    height: fit-content;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    user-select: none;
+  }
+
+  img, svg {
+    user-select: none;
+  }
+}
+
+@layer components {
+  .modal {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: none;
+  }
+  .modal[style*="display: flex"] {
+    display: flex !important;
+  }
+  .modal-overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(2px);
+  }
+  .modal-form {
+    height: 60%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start !important;
+    padding: 1rem;
+    @apply border border-border;
+    @apply rounded-xl;
+    @apply bg-surface;
+  }
+
+  p.error {
+    height: fit-content;
+    width: fit-content;
+    padding: 0.25rem;
+    @apply bg-red-500/20;
+    @apply text-red-500;
+  }
+  p.warning {
+    height: fit-content;
+    width: fit-content;
+    padding: 0.25rem;
+    @apply bg-yellow-500/20;
+    @apply text-yellow-500;
+  }
+  p.success {
+    height: fit-content;
+    width: fit-content;
+    padding: 0.25rem;
+    @apply bg-green-500/20;
+    @apply text-green-500;
+  }
+
+  button.primary {
+    @apply bg-primary;
+    @apply text-snow;
+
+    &:hover,
+    &:focus-visible {
+      @apply bg-secondary;
+    }
+  }
+  button.secondary {
+    @apply bg-border;
+    @apply text-snow;
+
+    &:hover,
+    &:focus-visible {
+      @apply bg-surface-muted;
+    }
+  }
+
+  button.success {
+    @apply bg-green-500;
+    @apply text-snow;
+
+    &:hover,
+    &:focus-visible {
+      @apply bg-green-600;
+    }
+  }
+
+  button.danger {
+    @apply bg-red-500;
+    @apply text-snow;
+
+    &:hover,
+    &:focus-visible {
+      @apply bg-red-600;
+    }
+  }
+
+  .icon {
+    @apply stroke-snow;
+    transition: all 0.2s;
+
+    &:hover,
+    &:focus-visible {
+      @apply stroke-smoke;
+    }
+  }
+}
+
+@layer utilities {
+
+}
